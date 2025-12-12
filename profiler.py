@@ -43,7 +43,6 @@ def run_pipeline():
     try:
         if not os.path.exists(USUARIOS_INPUT_FILE):
              # Se o arquivo não existe, executa o scraper de usuários
-            print("BUCETA")
             time.sleep(50)
             active_users = extrair_pagina_usuarios(limit_pages=USUARIOS_LIMITE_PAGINAS)
             with open(USUARIOS_INPUT_FILE, mode="w", newline="", encoding="utf-8") as f:
@@ -113,4 +112,5 @@ if __name__ == "__main__":
     try:
         run_pipeline()
     except KeyboardInterrupt:
+
         print("\nProcesso interrompido pelo usuário. Dados parciais salvos.")
